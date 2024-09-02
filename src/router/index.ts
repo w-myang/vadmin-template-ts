@@ -12,5 +12,14 @@ const router = createRouter({
   routes,
 });
 
+router.beforeEach((to,from,next) => {
+  // 显示进度条
+  NProgress.start()
+  next()
+})
 
+router.afterEach(() => {
+  // 关闭进度条
+  NProgress.done()
+})
 export default router
