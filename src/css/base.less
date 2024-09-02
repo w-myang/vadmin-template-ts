@@ -1,0 +1,79 @@
+@import url("./var.less");
+
+html,body{
+  height: 100%;
+  width:100%;
+}
+*{
+  padding:0px;
+  margin:0px;
+}
+
+#app{
+  height:100%;
+  width:100%;
+}
+
+.page-container{
+  width:100%;
+  height:100%;
+  background: white;
+  box-sizing: border-box;
+}
+// 循环生成margin值
+.mloop(@n, @i: 0) when (@i =< @n) {
+  .mt@{i} {
+    margin-top: 0px + @i;
+  }
+  .mb@{i} {
+    margin-bottom: 0px + @i;
+  }
+  .ml@{i} {
+    margin-left: 0px + @i;
+  }
+  .mr@{i} {
+    margin-right: 0px + @i;
+  }
+  .m@{i}{
+    margin:0px + @i;
+  }
+  .mloop(@n, (@i+@marginStep));
+}
+
+// 循环生成padding值
+.ploop(@n, @i: 0) when (@i =< @n) {
+  .pt@{i} {
+    padding-top: 0px + @i;
+  }
+  .pb@{i} {
+    padding-bottom: 0px + @i;
+  }
+  .pl@{i} {
+    padding-left: 0px + @i;
+  }
+  .pr@{i} {
+    padding-right: 0px + @i;
+  }
+  .p@{i}{
+    padding:0px + @i;
+  }
+  .ploop(@n, (@i+@paddingStep));
+}
+
+.mloop(@marginMax);
+.ploop(@paddingMax);
+
+// 循环生成字体大小
+.ftloop(@n, @i: 12) when (@i =< @n) {
+  .font@{i} {
+    font-size: 0px + @i;
+  }
+  .ftloop(@n, (@i+@fontSizeStep));
+}
+.ftloop(@fontSizeMax);
+
+// 字体加粗
+.fw600{
+  font-weight: 600;
+}
+
