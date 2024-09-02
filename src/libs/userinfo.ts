@@ -1,11 +1,11 @@
 // 用户信息处理
 
-interface user{
+interface User{
   name:string,
   department:string,
   gid:number
 }
-export function getUserInfo():user {
+export function getUserInfo():User {
   return {
     name: "管理员",
     department: "123",
