@@ -40,13 +40,13 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { onMounted, computed, ref } from "vue";
-import { getUserInfo } from "@/libs/userinfo";
+import { getUserInfo,User } from "@/libs/userinfo";
 import { useStore } from "vuex";
 import BreadCrumb from "./bread-crumb.vue";
 
-const userinfo = computed(() => getUserInfo());
+const userinfo = computed<User>(() => getUserInfo());
 const store = useStore();
 const isCollapse = computed(() => store.state.isCollapse)
 

@@ -39,13 +39,13 @@ import {
 import { useRouter, useRoute } from "vue-router";
 import { useStore } from "vuex";
 import routes from "@/router/routes.ts";
-import { getUserInfo } from "@/libs/userinfo.ts";
+import { getUserInfo,User } from "@/libs/userinfo.ts";
 
 const { proxy } = getCurrentInstance();
 const breadcrumbData = ref([]);
 const route = useRoute();
 const router = useRouter();
-const userinfo = computed(() => getUserInfo());
+const userinfo = computed<User>(() => getUserInfo());
 const getBreadcrumbData = () => {
   breadcrumbData.value = route.matched.filter(
     (item) => item.meta && item.meta.title

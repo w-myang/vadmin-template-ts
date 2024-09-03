@@ -8,7 +8,6 @@ import store from "./store/index"
 import zhCn from 'element-plus/es/locale/lang/zh-cn'
 import './css/base.less'
 import './css/overide.less'
-import { keysOf } from 'element-plus/es/utils';
 
 const app = createApp(App)
 

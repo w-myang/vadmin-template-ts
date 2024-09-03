@@ -1,6 +1,6 @@
 // 用户信息处理
 
-interface User{
+export interface User{
   name:string,
   department:string,
   gid:number
